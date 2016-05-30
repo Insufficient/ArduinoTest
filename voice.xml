@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Response><Say voice="alice">The security system has detected a potential intruder.</Say><Pause length="1"/><Say voice="alice">Goodbye</Say></Response>
+<Response><Say voice="alice">The smart home has detected some abnormal activity. Please check the website for further details</Say><Pause length="3"/><Say voice="alice">Goodbye</Say></Response>
