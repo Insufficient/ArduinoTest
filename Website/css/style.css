@@ -56,7 +56,7 @@ header.intro
 {
 	height: 200px;
 	perspective: 1px;
-	background: url( "../assets/weather.png") repeat fixed;
+	background: url( "../Website/assets/weather.png") repeat fixed;
 }
 
 .secIntro { width: 100%; }
@@ -194,7 +194,7 @@ only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) { 
     .parallax{
-		background: url( "../assets/weather_@2X.png") repeat fixed;
+		background: url( "../Website/assets/weather_@2X.png") repeat fixed;
 		background-size: contain;
     }
 }
