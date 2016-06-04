@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>HAL 9000 - Smart home interface</title>
+
+	<link rel="stylesheet" href="css/materialize.css">
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<header class="intro">
+		<div class="parallax">
+		</div>
+		<section class="container">
+			<h1 class"pName"><span class="highlight">HAL 9000 - Smart home interface</span></h1>
+		</section>
+	</header>
+
+	<div class="row">
+		<section class="tabulation col s12">
+			<ul class="tabs container">
+				<li class="tab col s4"><a href="#mon">Monitor</a></li>
+				<li class="tab col s4"><a href="#con">Control</a></li>
+				<li class="tab col s4"><a href="#set">Settings</a></li>
+			</ul>
+		</section>
+	</div>
+	<div class="row">
+		<section class="tabContent container">
+		    <div id="mon" class="col s12">
+				<ul class="collapsible popout" data-collapsible="expandable">
+					<li>
+						<div class="collapsible-header"><i class="material-icons">lightbulb_outline</i>Lighting</div>
+						<div class="collapsible-body smallContain">
+							<table>
+								<thead>
+									<tr>
+									<th data-field="id">Name</th>
+									<th data-field="name">Location</th>
+									<th data-field="state">State</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr>
+										<td>Lighting 1</td>
+										<td>Front Room</td>
+										<td><span class="retLight">..</span>
+<!-- 											<div class="switch">
+												<label>
+													<input type="checkbox" checked><span class="lever"></span>
+												</label>
+											</div> -->
+										</td>
+									</tr>
+									<tr>
+										<td>Lighting 2</td>
+										<td>Back Room</td>
+										<td><span class="retLight2">..</span>
+<!-- 											<div class="switch">
+												<label>
+													<input type="checkbox" checked><span class="lever"></span>
+												</label>
+											</div> -->
+										</td>
+									</tr>
+								</tbody>
+							</table>
+<!-- 							<div class="inline-info">
+								<p>Current Energy Usage: <span class="unitHighlight">45W</span></p>
+							</div> -->
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">equalizer</i>Temperature</div>
+						<div class="collapsible-body smallContain">
+							<table>
+								<thead>
+									<tr>
+									<th data-field="name">Location</th>
+									<th data-field="state">State of temperature controls</th>
+									<th data-field="rTemp">Temperature</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr>
+										<td>Fan</td>
+										<td>
+											<div class="switch">
+												<label>
+													<input type="checkbox" checked><span class="lever"></span>
+												</label>
+											</div>
+										</td>
+										<td><span class="retTemp">..</span></td>
+									</tr>
+									<tr>
+										<td>Heater</td>
+										<td>
+											<div class="switch">
+												<label>
+													<input type="checkbox"><span class="lever"></span>
+												</label>
+											</div>
+										</td>
+										<td><span class="retTemp">..</span></td>
+									</tr>
+								</tbody>
+							</table>
+<!-- 							<div class="inline-info">
+								<p>Current Energy Usage: <span class="unitHighlight">45W</span></p>
+							</div> -->
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">person</i>Occupancy</div>
+						<div class="collapsible-body smallContain">
+						<h3>Current Occupants: </h3>
+						<ul class="collection profile_1">
+						   <li class="collection-item avatar">
+						     <img src="assets/diamond_upholstery.png" alt="" class="circle">
+						     <span class="title pName1">Gordon</span>
+						</ul>
+						<ul class="collection profile_2">
+						   <li class="collection-item avatar">
+						     <img src="assets/weather.png" alt="" class="circle">
+						     <span class="title pName2">Gordon</span>
+						</ul>
+						<!-- <a data-target="modal2" class="btn modal-trigger green">alert</a> -->
+
+						</div>
+					</li>
+					<!--<li>
+						<div class="collapsible-header"><i class="material-icons">lock</i>Safety</div>
+						<div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+					</li>!-->
+					<li>
+						<div class="collapsible-header"><i class="material-icons">healing</i>Health</div>
+						<div class="collapsible-body smallContain">
+							<div class="row">
+								<h3>Current Profile: <span class="profile_1 pName1"></span><span class="profile_2 pName2"></span></h3>
+								<div class="col s12 m12 l3">
+									<div class="card  light-blue darken-1">
+										<div class="card-content white-text">
+											<span class="card-title">Heart Rate</span>
+											<h3 class="monCurBPM">60 bpm</h3>
+
+										</div>
+									</div>
+									<canvas id="myChart" width="300" height="300"></canvas>
+								</div>
+<!-- 								<div class="col s12 m12 l3">
+									<div class="card orange darken-2">
+										<div class="card-content white-text">
+											<span class="card-title">Blood Pressure</span>
+											<h3 class="monCurBPM">120 / 70</h3>
+										</div>
+									</div>
+								</div> -->
+							</div>
+							<a data-target="modal1" class="btn modal-trigger green healthAlert">alert</a>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">cloud</i>Weather</div>
+						<div class="collapsible-body">
+							<div class="row secTemp">
+								<h2 class="getLoc center breadcrumbs">Country Placeholder</h1>
+								<div class="col s12 m12 l4">
+									<div class="card deep-purple darken-1">
+										<div class="card-content white-text">
+											<span class="card-title">Temperature</span>
+											<h3 class="monWeather">...</h3>
+										</div>
+									</div>
+								</div>
+								<div class="col s12 m12 l4">
+									<div class="card blue darken-1">
+										<div class="card-content white-text">
+											<span class="card-title">Humidity</span>
+											<h3 class="monHumidity">...</h3>
+										</div>
+									</div>
+								</div>
+								<div class="col s12 m12 l4">
+									<div class="card  teal darken-2">
+										<div class="card-content white-text">
+											<span class="card-title">Wind Speed</span>
+											<h3 class="monCurDesc">...</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+		    </div>
+
+
+		    <div id="con" class="col s12">
+		    	<p>
+		    	  <input type="checkbox" class="filled-in" id="customSet" />
+		    	  <label for="customSet">Note: these controls will override the users' preferences.</label>
+		    	</p>
+				<ul class="collapsible popout hidden" data-collapsible="expandable">
+					<li>
+						<div class="collapsible-header"><i class="material-icons">lightbulb_outline</i>Lighting</div>
+						<div class="collapsible-body smallContain">
+							<table>
+								<thead>
+									<tr>
+									<th data-field="id">Name</th>
+									<th data-field="name">Location</th>
+									<th data-field="state">State</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr>
+										<td>Lighting 1</td>
+										<td>(Test House)</td>
+										<td>
+											<p class="range-field">
+												<span class="left_">Low</span>
+												<span class="right_">High</span>
+											  <input class ="sendSlider" type="range" data-index="3" value="0" min="0" max="255" />
+											</p>
+										</td>
+									</tr>
+									<td>Lighting 2</td>
+										<td>(Test House)</td>
+										<td>
+											<p class="range-field">
+												<span class="left_">Low</span>
+												<span class="right_">High</span>
+											  <input class ="sendSlider" type="range" data-index="4" value="0" min="0" max="255" />
+											</p>
+										</td>
+									</tr>
+<!-- 									<tr>
+										<td>Ceiling Lights</td>
+										<td>Living Room</td>
+										<td>
+										<form action="#">
+											<p class="range-field">
+											  <input type="range" min="0" max="100" />
+											</p>
+										</form>
+										</td>
+									</tr> -->
+								</tbody>
+							</table>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">equalizer</i>Temperature</div>
+						<div class="collapsible-body smallContain">
+							<table>
+								<thead>
+									<tr>
+									<th data-field="name">Item</th>
+									<th data-field="rTemp">Temperature</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr>
+										<td>Fan</td>
+										<td>
+											<p class="range-field">
+												<span class="left_">Low</span>
+												<span class="right_">High</span>
+											  <input class ="sendSlider" type="range" data-index="1" value="0" min="0" max="255" />
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td>Heater</td>
+										<td>
+											<p class="range-field">
+												<span class="left_">Low</span>
+												<span class="right_">High</span>
+											  <input class ="sendSlider" type="range" data-index="2" value="0" min="0" max="255" />
+											</p>
+										</td>
+									</tr>
+<!-- 									<tr>
+										<td>Living Room</td>
+										<td>
+											<p class="range-field">
+											  <input type="range" min="15" max="40" />
+											</p>
+										</td>
+									</tr> -->
+								</tbody>
+							</table>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header"><i class="material-icons">lock</i>Security</div>
+						<div class="collapsible-body">
+							<p>
+							  <input type="checkbox" class="filled-in" id="forceSec" />
+							  <label for="forceSec">Activate Security</label>
+							</p>
+							<p>Note: this setting will manually activate or deactivate the home's security system.</p>
+						</div>
+					</li>
+				</ul>		    	
+		    </div>
+
+		    <div id="set" class="col s12">
+		    	<div class="row">
+		    		<h3>General Settings</h3>
+	    		</div>
+				<div class="row">
+					<div class="input-field col s12 m12 l6">
+						<input value="Los Angeles, US" id="Location" type="text" class="validate">
+						<label class="active">Location</br>City, (Country)</label>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m12 l6">
+						<input value="" id="Pass" type="password" class="validate">
+						<label class="active">Password</label>
+					</div>
+				</div>
+				<div class="divider"></div>
+				<div class="row">
+					<p>
+					  <input type="checkbox" id="btnAuto" checked="checked" id="btnAuto"/>
+					  <label for="btnAuto">Automatic Wristband Preferences</label>
+					</p>
+					<p>If your wristband is detected inside the home, preferences set above will automatically be set.</p>
+				</div>
+				<div class="row">
+					<p>
+					  <input type="checkbox" id="btnAutoS" checked="checked" />
+					  <label for="btnAutoS">Automatic Activation of Security</label>
+					</p>
+					<p>The security system will be enabled automatically when your wristband leaves the house.</p>
+				</div>
+
+				<a class="waves-effect waves-light btn btnSave">save</a>
+				<div class="row">
+					<h3>Profile Settings</h3>
+				</div>
+
+				<div class="row prof">
+					<div class="input-field col s4 m4">
+						<select class="selProf browser-default">
+							<option value="" disabled>Choose profile</option>
+							<option value="1" class="pName1" selected>Option 1</option>
+							<option value="2" class="pName2">Option 2</option>
+						</select>
+					</div>
+
+					<div class="input-field col s4">
+						<input value="YY" id="proName" type="text" class="validate">
+						<label class="active" for="proName">Profile Name</label>
+					</div>
+
+					<div class="input-field col s12 m4">
+						<form action="#">
+							<p class="range-field">
+								<input type="range" id="proTemp" min="16" max="30" />
+							</p>
+						</form>
+						<label class="active" for="rangeOne">Preferred Temperature</label>
+					</div>
+					<div class="input-field col s12 m4">
+						<form action="#">
+							<p class="range-field">
+								<input type="range" id="proLight" min="30" max="255" />
+							</p>
+						</form>
+						<label class="active" for="rangeTwo">Light Intensity</label>
+					</div>
+				</div>
+				<a class="waves-effect waves-light btn btnSaveTwo">save</a>
+				<!--<div class="progress">
+					<div class="indeterminate"></div>
+				</div>-->
+		    </div>
+	    </section>
+	</div>
+
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+			<h1>HEALTH ALERT</h1>
+			<h3>The blood pressure or heart rate of <span class="profile_1 pName1"></span><span class="profile_2 pName2"></span> is abnormal!<br><br>A text message has been sent to George and medical authorities.</h3>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-action red lighten-1 inverse modal-close waves-effect waves-red btn-flat ">I UNDERSTAND</a>
+		</div>
+	</div>
+
+	<div id="modal2" class="modal">
+		<div class="modal-content">
+			<h1>SECURITY ALERT</h1>
+			<h3>A potential intruder has been detected.<br><br>An email has been sent to the home owner's email address and a voice-call is initiated.</h3>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-action red lighten-1 inverse modal-close waves-effect waves-red btn-flat ">I UNDERSTAND</a>
+		</div>
+	</div>
+
+	<div id="modal3" class="modal">
+		<div class="modal-content">
+		<div class="row">
+			<div class="col s12">
+				<h1 class="myTitle">Welcome!</h1>
+				<label>Please enter your password below:</label>
+				<input type="password" id="passwd" autofocus></input>
+			</div>
+		</div>
+		<div class="row secTemp">
+			<h3 class="getLoc breadcrumbs">Country Placeholder</h3>
+			<span class="curTime"></span>
+			<div class="col s12 m12 l12">
+				<div class="col s12 m4">
+					<div class="card deep-purple darken-1">
+						<div class="card-content white-text">
+							<span class="card-title">Temperature</span>
+							<h3 class="monWeather">...</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m4">
+					<div class="card blue darken-1">
+						<div class="card-content white-text">
+							<span class="card-title">Humidity</span>
+							<h3 class="monHumidity">...</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m4">
+					<div class="card  teal darken-2">
+						<div class="card-content white-text">
+							<span class="card-title">Wind Speed</span>
+							<h3 class="monCurDesc">...</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="row">
+		<div class="progress loadingBar">
+			<div class="indeterminate"></div>
+		</div>
+	</footer>
+
+	<script src="assets/jquery-2.2.2.min.js"></script>
+	<script src="assets/materialize.min.js"></script>
+	<script src="assets/main.js"></script>
+	<script src="assets/chart2.js"></script>
+	<script src="assets/realChart.js"></script>
+
+</body>
+
+</html>
